@@ -1,0 +1,18 @@
+body {
+  margin: 0;
+  font-family: 'Teko', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding-top: 90px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: greenyellow;
+  /* height: 2000px; */
+}
+
+code {
+  font-family: 'Teko', sans-serif;;
+}

@@ -1,0 +1,280 @@
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  backdrop-filter: blur(5px);
+  padding: 10px;
+  z-index: 99;
+}
+
+.nav-bg {
+  background: black;
+  border-radius: 3px;
+  z-index: 0;
+  margin: 8px;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+  font-size: 25px;
+  /* z-index: 1; */
+  /* background: white; */
+}
+
+li {
+  transition: transform 0.15s;
+  background: white;
+  border-radius: 3px;
+  border: 1px solid black;
+  transform: translate(-5px, -5px);
+}
+
+li:hover {
+  transform: translate(0px, 0px);
+}
+
+.add-note {
+  display: flex;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-btn {
+  font-family: 'Teko', sans-serif;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  border: 1px solid black;
+  border-radius: 3px;
+  padding: 5px 10px;
+  font-size: 20px;
+  transform: translate(-5px, -5px);
+  transition: transform 0.15s;
+}
+
+.add-btn input::placeholder {
+  font-family: 'Teko', sans-serif;
+  font-size: 20px;
+}
+
+.add-note input {
+  transition: transform 0.15s;
+}
+
+.add-btn:hover {
+  transform: translate(0px, 0px);
+}
+
+input:active {
+  outline: none;
+  transform: translate(0px, 0px);
+}
+
+input:focus {
+  outline: none;
+  transform: translate(0px, 0px);
+}
+
+input:hover {
+  outline: none;
+  transform: translate(0px, 0px);
+}
+
+.add-btn img {
+  height: 20px;
+  width: 20px;
+}
+
+input {
+  font-family: 'Teko', sans-serif;
+  border: 1px solid black;
+  border-radius: 3px;
+  padding: 5px 10px;
+  font-size: 20px;
+  transform: translate(-5px, -5px);
+}
+
+.notes {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  row-gap: 20px;
+  column-gap: 20px;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.note-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 20px;
+  transition: transform 0.15s;
+  z-index: 99;
+  background: white;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+}
+
+.act-bg {
+  background: black;
+  border-radius: 3px;
+  z-index: 0;
+  margin: 0px 5px;
+  display: flex;
+}
+
+.actions button {
+  border: 1px solid black;
+  border-radius: 3px;
+  background: white;
+  cursor: pointer;
+  z-index: 2;
+  transform: translate(-3px, -3px);
+  transition: transform 0.15s;
+  font-family: 'Teko', sans-serif;
+  font-size: 15px;
+}
+
+.actions button:hover {
+  transform: translate(0px, 0px);
+}
+
+.bg {
+  background: black;
+  z-index: 0;
+  border-radius: 5px;
+}
+
+.btn-bg {
+  background: black;
+  z-index: 0;
+  border-radius: 3px;
+  margin-left: 15px;
+}
+
+.note-item:hover {
+  transform: translate(-10px, -10px);
+}
+
+.inp-bg {
+  background: black;
+  border-radius: 3px; 
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 80px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.login-bg {
+  background: black;
+  border-radius: 5px;
+}
+
+.login-bg form {
+  background: white;
+  transform: translate(-7px, -7px);
+  border-radius: 5px;
+  border: 1px solid black;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+form h1 {
+  margin: 0;
+  font-size: 40px;
+}
+
+.lgn-bg {
+  background: black;
+  border-radius: 3px;
+  display: flex;
+  margin-top: 7px;
+}
+
+.lgn-btn {
+  transform: translate(-5px, -5px);
+  background: white;
+  border: 1px solid black;
+  border-radius: 3px;
+  padding: 0px 10px;
+  font-family: 'Teko', sans-serif;
+  font-size: 20px;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: transform 0.15s;
+}
+
+.lgn-btn:hover {
+  transform: translate(0px, 0px);
+}
+
+.form-bg {
+  background: black;
+  border-radius: 3px;
+  margin: 7px 0px;
+}
+
+.form-bg input:hover {
+  transform: translate(0px, 0px);
+}
+
+.form-bg input:focus {
+  transform: translate(0px, 0px);
+}
+
+.form-bg input {
+  transition: transform 0.15s;
+}
+
+.home {
+  position: absolute;
+  top: 180px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.home h1 {
+  font-size: 40px;
+}
