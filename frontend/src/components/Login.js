@@ -24,6 +24,7 @@ export default function Login() {
     console.log('form submitted...', cred)
     disp(login(cred))
     disp(reset())
+    nav('/')
   }
 
   return (

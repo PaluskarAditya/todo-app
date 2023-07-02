@@ -37,7 +37,7 @@ const addNote = async (req, res) => {
 
 const remNote = async (req, res) => {
   try {
-    const { id } = req.params.id
+    const id = req.header('id')
     if (!id) {
       res.json({ err: 'id not provided' })
     } else {
@@ -46,7 +46,7 @@ const remNote = async (req, res) => {
         res.json({ err: 'no note found' })
       } else {
         note = await Note.findByIdAndDelete(id)
-        res.json({ deleted: note })
+        res.json({ deleted: id })
       }
     }
   } catch (error) {

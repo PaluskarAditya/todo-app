@@ -14,13 +14,16 @@ export default function Signup() {
     e.preventDefault()
     console.log('form submitted...', cred)
     disp(register(cred))
+    nav('/')
   }
 
   const user = localStorage.getItem('user')
 
-  useEffect(()=>{
-    nav('/')
-  },[user])
+  useEffect(() => {
+    if (user) {
+      nav('/')
+    }
+  })
 
   return (
     <section className='login'>
@@ -28,13 +31,13 @@ export default function Signup() {
         <form onSubmit={handleSub}>
           <h1>Signup</h1>
           <div className='form-bg margin'>
-            <input type='text' placeholder='username' name='uname' onChange={change}/>
+            <input type='text' placeholder='username' name='uname' onChange={change} />
           </div>
           <div className='form-bg margin'>
-            <input type='email' placeholder='email' name='email' onChange={change}/>
+            <input type='email' placeholder='email' name='email' onChange={change} />
           </div>
           <div className='form-bg margin'>
-            <input type='password' placeholder='password' name='pass' onChange={change}/>
+            <input type='password' placeholder='password' name='pass' onChange={change} />
           </div>
           <div className='lgn-bg'>
             <button className='lgn-btn' type='submit'>signup</button>

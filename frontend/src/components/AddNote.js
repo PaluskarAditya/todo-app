@@ -8,12 +8,13 @@ export default function AddNote() {
   const [text, setText] = useState('')
   const handleAdd = () => {
     disp(addNote(text))
+    // disp(getNotes())
     setText('')
   }
 
   useEffect(()=>{
     disp(getNotes())
-  },[all, disp])
+  },[disp])
 
   return (
     <section className='add-note'>

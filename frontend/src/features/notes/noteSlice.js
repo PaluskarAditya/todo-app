@@ -1,4 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { useDispatch } from "react-redux";
 
 const noteSlice = createSlice({
   name: "notes",
@@ -6,11 +7,23 @@ const noteSlice = createSlice({
     all: [],
     isLoading: ""
   },
-  reducers: {},
+  reducers: {
+    clear(state) {
+      state.all = []
+    }
+  },
   extraReducers: builder => {
     builder.addCase(getNotes.fulfilled, (state, action) => {
       state.isLoading = false
       state.all = action.payload.allNotes
+    })
+
+    builder.addCase(addNote.fulfilled, (state, action) => {
+      state.all.push(action.payload.success)
+    })
+
+    builder.addCase(remNote.fulfilled, (state, action) => {
+      state.all = state.all.filter(note => note._id !== action.payload.deleted)
     })
   }
 })
@@ -45,7 +58,19 @@ export const addNote = createAsyncThunk("note/add", async (text) => {
 })
 
 export const remNote = createAsyncThunk("note/del", async (id) => {
-  
+  const url = `http://localhost:8080/note/rem`
+  const res = await fetch(url, {
+    method: "DELETE",
+    mode: "cors",
+    headers: {
+      "Content-Type": "application/json",
+      "token": localStorage.getItem('token'),
+      "id": id,
+    }
+  })
+  const data = await res.json()
+  return data
 })
 
+export const { clear } = noteSlice.actions
 export default noteSlice.reducer
