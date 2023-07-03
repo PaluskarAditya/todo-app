@@ -2,9 +2,12 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { editNote, getNotes } from '../features/notes/noteSlice'
 import { remNote } from './../features/notes/noteSlice';
+import Note from './Note';
+import EditNote from './EditNote';
 
 export default function Notes() {
   const disp = useDispatch()
+  const [editnote, setNote] = useState({})
   const  [newText , setNew] = useState('')
   const [id, setId] = useState()
   const { all } = useSelector(state => state.notes)
