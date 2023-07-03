@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-const baseURL = "http://localhost:8080"
+const baseURL = "https://react-redux-todo-app.onrender.com"
 
 const noteSlice = createSlice({
   name: "notes",
