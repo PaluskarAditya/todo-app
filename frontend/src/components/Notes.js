@@ -19,7 +19,9 @@ export default function Notes() {
     }
     disp(editNote(info))
     document.getElementById('edit-note').style.display = 'none'
-    disp(getNotes())
+    setTimeout(() => {
+      disp(getNotes())
+    }, 100);
   }
 
   useEffect(() => {
