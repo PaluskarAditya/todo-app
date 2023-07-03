@@ -1,5 +1,4 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { useDispatch } from "react-redux";
 
 const noteSlice = createSlice({
   name: "notes",
@@ -94,7 +93,6 @@ export const editNote = createAsyncThunk("note/edit", async (info) => {
     body: JSON.stringify({ text: info.text })
   })
   const data = await res.json()
-  console.log(data)
   return data
 })
 
