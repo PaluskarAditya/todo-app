@@ -62,5 +62,5 @@ Start the server
 
 ## Support
 
-For support, email adityapaluskar@.com
+For support, email adityapaluskar@gmail.com
 
