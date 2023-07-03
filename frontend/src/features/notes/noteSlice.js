@@ -18,6 +18,10 @@ const noteSlice = createSlice({
       state.all = action.payload.allNotes
     })
 
+    builder.addCase(getNotes.pending, (state) => {
+      state.isLoading = true
+    })
+
     builder.addCase(addNote.fulfilled, (state, action) => {
       state.all.push(action.payload.success)
     })
