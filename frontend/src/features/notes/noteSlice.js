@@ -1,4 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+const baseURL = "http://localhost:8080"
 
 const noteSlice = createSlice({
   name: "notes",
@@ -36,7 +37,7 @@ const noteSlice = createSlice({
 })
 
 export const getNotes = createAsyncThunk("note/all", async () => {
-  const url = "http://localhost:8080/note/all"
+  const url = baseURL+"/note/all"
   const res = await fetch(url, {
     method: "GET",
     mode: "cors",
@@ -50,7 +51,7 @@ export const getNotes = createAsyncThunk("note/all", async () => {
 })
 
 export const addNote = createAsyncThunk("note/add", async (text) => {
-  const url = "http://localhost:8080/note/add"
+  const url = baseURL+"/note/add"
   const res = await fetch(url, {
     method: "POST",
     mode: "cors",
@@ -65,7 +66,7 @@ export const addNote = createAsyncThunk("note/add", async (text) => {
 })
 
 export const remNote = createAsyncThunk("note/del", async (id) => {
-  const url = `http://localhost:8080/note/rem`
+  const url = baseURL+`/note/rem`
   const res = await fetch(url, {
     method: "DELETE",
     mode: "cors",
@@ -81,7 +82,7 @@ export const remNote = createAsyncThunk("note/del", async (id) => {
 
 export const editNote = createAsyncThunk("note/edit", async (info) => {
   console.log('updating note...')
-  const url = `http://localhost:8080/note/edit`
+  const url = baseURL+`/note/edit`
   const res = await fetch(url, {
     method: "PUT",
     mode: "cors",

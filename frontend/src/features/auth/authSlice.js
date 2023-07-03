@@ -1,8 +1,9 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+const baseURL = "http://localhost:8080"
 
 export const login = createAsyncThunk("auth/signin", async (cred) => {
   console.log('loggin in...', cred)
-  const url = "http://localhost:8080/user/login"
+  const url =  baseURL+"/user/login"
   const res = await fetch(url, {
     method: "POST",
     mode: "cors",
@@ -17,7 +18,7 @@ export const login = createAsyncThunk("auth/signin", async (cred) => {
 })
 
 export const register = createAsyncThunk("auth/signin", async (cred) => {
-  const url = "http://localhost:8080/user/signup"
+  const url = baseURL+"/user/signup"
   const res = await fetch(url, {
     method: "POST",
     mode: "cors",
