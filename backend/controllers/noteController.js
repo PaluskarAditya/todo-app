@@ -56,7 +56,9 @@ const remNote = async (req, res) => {
 
 const editNote = async (req, res) => {
   try {
-    const { id, text } = req.body
+    const { text } = req.body
+    const id = req.header('id')
+    console.log(text, id)
     if (!id) {
       res.json({err: 'id not provided'})
     } else if (!text) {
@@ -65,6 +67,7 @@ const editNote = async (req, res) => {
       let note = await Note.findByIdAndUpdate(id, {
         text
       })
+      note.save()
       if (!note) {
         res.json({err: 'no note found'})
       } else {

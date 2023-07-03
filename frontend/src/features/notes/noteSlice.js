@@ -25,6 +25,14 @@ const noteSlice = createSlice({
     builder.addCase(remNote.fulfilled, (state, action) => {
       state.all = state.all.filter(note => note._id !== action.payload.deleted)
     })
+
+    builder.addCase(editNote.fulfilled, (state, action) => {
+      state.all.find((note, i) => {
+        if (note._id === action.payload.updated._id) {
+          note[i] = action.payload.updated
+        }
+      })
+    })
   }
 })
 
@@ -69,6 +77,24 @@ export const remNote = createAsyncThunk("note/del", async (id) => {
     }
   })
   const data = await res.json()
+  return data
+})
+
+export const editNote = createAsyncThunk("note/edit", async (info) => {
+  console.log('updating note...')
+  const url = `http://localhost:8080/note/edit`
+  const res = await fetch(url, {
+    method: "PUT",
+    mode: "cors",
+    headers: {
+      "Content-Type": "application/json",
+      "token": localStorage.getItem('token'),
+      "id": info.id,
+    },
+    body: JSON.stringify({ text: info.text })
+  })
+  const data = await res.json()
+  console.log(data)
   return data
 })
 
